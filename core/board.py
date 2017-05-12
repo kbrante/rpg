@@ -6,7 +6,7 @@ class Board(object):
         self.grid = []
         for l in range(lig):
             self.grid.append([])
-            for l in range(col):
+            for c in range(col):
                 self.grid[l].append(Cell())
 
 class Cell(object):

@@ -8,12 +8,16 @@ class Character(object):
    def __init__(self, health, xp):
        self.health = health
        self.xp = xp
+       self.position = None
 
    def eat(self, food):
        self.health += food.use()
 
-   def move(self):
-       pass
+   def move(self,cell):
+        if self.position != None :
+            self.position.characters.remove(self)
+        self.position = cell
+        self.position.characters.append(self)
 
    def die(self):
        pass
